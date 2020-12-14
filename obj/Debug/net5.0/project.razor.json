@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\helloworld.csproj",
+  "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\helloworld.csproj",
   "Configuration": {
     "ConfigurationName": "Default",
     "LanguageVersion": "5.0",
@@ -13894,53 +13894,53 @@
   "RootNamespace": "helloworld",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\_Imports.razor",
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Shared\\EmptyLayout.razor",
-      "TargetPath": "Shared\\EmptyLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\Index.razor",
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\Login.razor",
-      "TargetPath": "Pages\\Login.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\App.razor",
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Shared\\SurveyPrompt.razor",
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Shared\\EmptyLayout.razor",
+      "TargetPath": "Shared\\EmptyLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Pages\\FetchData.razor",
+      "TargetPath": "Pages\\FetchData.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\dot\\helloworld\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     }
   ],

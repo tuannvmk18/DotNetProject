@@ -30,7 +30,7 @@ namespace helloworld.Services
         public AuthService(HttpClient _httpClient, ILocalStorageService _localStorage, ILogger<AuthService> _logger, NavigationManager _navigationManager)
         {
             this.localStorage = _localStorage;
-            this.logger = _logger;
+            this.logger = _logger; //Replace for Console
             this.httpClient = _httpClient;
             this.navigationManager = _navigationManager;
 
@@ -64,7 +64,7 @@ namespace helloworld.Services
             }
             else
             {
-                //Add throw exception if error
+                //Throw exception if error
                 var message = await responseMessage.Content.ReadAsStringAsync();
                 throw new Exception(message);
             }
@@ -73,6 +73,7 @@ namespace helloworld.Services
         public async Task Logout()
         {
             await this.localStorage.RemoveItemAsync("token");
+            this.navigationManager.NavigateTo("login");
         }
 
         public async Task Initialize() {

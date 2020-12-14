@@ -32,7 +32,7 @@ namespace helloworld
             builder.Services.AddScoped<AuthService>();
 
             var host = builder.Build();
-
+            
             //Run service when app start
             var authService = host.Services.GetRequiredService<AuthService>();
             await authService.Initialize();

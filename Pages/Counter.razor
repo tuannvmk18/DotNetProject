@@ -1,5 +1,5 @@
 @page "/counter"
-@inject AuthService authService;
+
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
@@ -14,8 +14,4 @@
         currentCount++;
     }
 
-    protected override async Task OnInitializedAsync()
-    {
-        var a = await authService.Login("test", "test"); 
-    }
 }

@@ -1,3 +1,219 @@
+/* /Pages/Login.razor.rz.scp.css */
+.section[b-n9fwm3a14c] {
+    max-width: 80%;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main[b-n9fwm3a14c] {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intro-section[b-n9fwm3a14c] {
+    flex-basis: 60%;
+    text-align: center;
+}
+
+.intro-heading[b-n9fwm3a14c] {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.intro-text[b-n9fwm3a14c] {
+    margin-bottom: 100px;
+    color: #aaaaaa;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.sign-section[b-n9fwm3a14c] {
+    flex-basis: 30%;
+    color: #373941;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 3px rgba(220, 218, 228, 1);
+}
+
+.sign-block[b-n9fwm3a14c] {
+    padding: 10%;
+}
+
+.sign-heading[b-n9fwm3a14c] {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sign-button[b-n9fwm3a14c] {
+    background-color: #46a049;
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(85, 192, 99, 1);
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.signup-label[b-n9fwm3a14c] {
+    font-size: 16px;
+    color: #63676b;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.signup-input[b-n9fwm3a14c] {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: #f2f3f5;
+    outline: none;
+    border: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.signup-already[b-n9fwm3a14c] {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 25px;
+}
+
+.signup-login-link[b-n9fwm3a14c] {
+    color: #2979ff;
+    text-decoration: none;
+}
+/* /Pages/Register.razor.rz.scp.css */
+.section[b-fsu427wnnv] {
+    max-width: 80%;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main[b-fsu427wnnv] {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intro-section[b-fsu427wnnv] {
+    flex-basis: 60%;
+    text-align: center;
+}
+
+.intro-heading[b-fsu427wnnv] {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.intro-text[b-fsu427wnnv] {
+    margin-bottom: 100px;
+    color: #aaaaaa;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.sign-section[b-fsu427wnnv] {
+    flex-basis: 30%;
+    color: #373941;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 3px rgba(220, 218, 228, 1);
+}
+
+.sign-block[b-fsu427wnnv] {
+    padding: 10%;
+}
+
+.sign-heading[b-fsu427wnnv] {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sign-button[b-fsu427wnnv] {
+    background-color: #46a049;
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(85, 192, 99, 1);
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.signup-label[b-fsu427wnnv] {
+    font-size: 16px;
+    color: #63676b;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.signup-input[b-fsu427wnnv] {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: #f2f3f5;
+    outline: none;
+    border: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.signup-already[b-fsu427wnnv] {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 25px;
+}
+
+.signup-login-link[b-fsu427wnnv] {
+    color: #2979ff;
+    text-decoration: none;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-igwmqlteog] {
     position: relative;

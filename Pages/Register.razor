@@ -1,0 +1,37 @@
+﻿@page "/register"
+
+@layout EmptyLayout
+
+<div>
+     <section class="section">
+            <div class="main">
+                <div class="intro-section">
+                    <h6 class="intro-heading">Welcome to <span style="color:#46a049">dotnet-algorithon</span> </h6>
+                    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe dignissimos officia sint animi voluptatum est praesentium nostrum, iusto earum fugit.</p>
+                    <img src="images/img/laptop_hkaxzz.png" alt="Laptop">
+                </div>
+    
+                <div class="sign-section">
+                    <div class="sign-block">
+                        <h3 class="sign-heading">Sign Up</h3>
+                        <form action="#" class="signup-form" autocomplete="off">
+                            <label for="name" class="signup-label">Full name:</label>
+                            <input type="text" id="name" class="signup-input" placeholder="Eg: John Doe">
+                            <label for="email" class="signup-label">Email:</label>
+                            <input type="text" id="email" class="signup-input" placeholder="Eg: johndoe@gmai.com">
+                            <label for="password" class="signup-label">Password:</label>
+                            <input type="password" id="password" class="signup-input" placeholder="********">
+                            <label for="conf-password" class="signup-label">Confirm password:</label>
+                            <input type="password" id="conf-password" class="signup-input" placeholder="********">
+                            <button class="sign-button">Sign Up</button>
+                        </form>
+                        <p class="signup-already">
+                            <span>Already have an account ?</span>
+                            <NavLink href="SignIN.cshtml" target="_blank" class="signup-login-link">Back to login!</NavLink>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>

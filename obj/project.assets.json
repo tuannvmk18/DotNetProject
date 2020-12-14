@@ -1276,19 +1276,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MinhTuan\\.nuget\\packages\\": {}
+    "C:\\Users\\hohuy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MinhTuan\\Desktop\\helloworld\\helloworld.csproj",
+      "projectUniqueName": "C:\\Users\\hohuy\\Downloads\\DotNetProject\\helloworld.csproj",
       "projectName": "helloworld",
-      "projectPath": "C:\\Users\\MinhTuan\\Desktop\\helloworld\\helloworld.csproj",
-      "packagesPath": "C:\\Users\\MinhTuan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MinhTuan\\Desktop\\helloworld\\obj\\",
+      "projectPath": "C:\\Users\\hohuy\\Downloads\\DotNetProject\\helloworld.csproj",
+      "packagesPath": "C:\\Users\\hohuy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hohuy\\Downloads\\DotNetProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MinhTuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hohuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -636,3 +636,10 @@ C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\helloworld.pdb
 C:\Users\MinhTuan\Desktop\helloworld\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\MinhTuan\Desktop\helloworld\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll
 C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\build-gz\UcdVW89V.gz
+C:\Users\MinhTuan\Desktop\helloworld\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
+C:\Users\MinhTuan\Desktop\helloworld\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\build-gz\XIv9IX9i.gz
+C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
+C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\RazorDeclaration\Shared\EmptyLayout.razor.g.cs
+C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\Razor\Shared\EmptyLayout.razor.g.cs

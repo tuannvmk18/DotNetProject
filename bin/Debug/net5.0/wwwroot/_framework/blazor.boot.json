@@ -10,6 +10,7 @@
       "Blazored.LocalStorage.dll": "sha256-7+FtaZd2xSysaMLC59XhYdtkNMZ15ha0lk73dxPdT5w=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-l3ZLL\/J5Qez21fDEDw2b32hOtlT11ly1GmmKGPMfMWQ=",
       "Microsoft.AspNetCore.Components.dll": "sha256-EPSZDBpWHRQ8gG6\/z95pneA5\/LyXLj2W4QNUXpEqKk4=",
+      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-rNJDnN4vKduHed17AxTd5v8QTSk7AaWEUmsXr2mGxaA=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-D1w9d3k8\/YsRHjUWE8r0mcincGLiFMnCKofplsO+ND8=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-RRf4AB0dV9\/i2UOUzqv9Y6\/lhmXbmGu69KdV9IKl3Sg=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-e1qZjweGQyiTJvKcu\/qrqk94ybJ9x0f4iQ4NvNemgxs=",
@@ -197,11 +198,11 @@
       "mscorlib.dll": "sha256-FWPx51huC\/WJLkKCgoTEa5pzm8+4Aucxg0YuOiuOwkQ=",
       "netstandard.dll": "sha256-2ba2qAAtNUX9Qh5PFXhTMtcD\/Nra\/wyG197\/wrnxElI=",
       "System.Private.CoreLib.dll": "sha256-4wsl1v32v74UB0CTQ6+AdUTdM+9C1VraomgeCjb4Wug=",
-      "helloworld.dll": "sha256-t\/T4pybRFGlO3DTYo\/XQRvGVOjfwASAJS+TXmsTWwf0="
+      "helloworld.dll": "sha256-Q6KjJDfVA\/ISa0j5MUD+IXcIldt49CsngcppgZ+3Ghg="
     },
     "lazyAssembly": null,
     "pdb": {
-      "helloworld.pdb": "sha256-jUaq8OOG1L1rs8L0+UQj66WEkhYnKDT4oYdtyO0gWik="
+      "helloworld.pdb": "sha256-Ol+AHzOdbwgo+gzl51PrFPLPTABhbiIihoW8VLb4khg="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-nXByiCO4+RYyh+A88TSSZDwAJMF7M7Up\/h6dfAA19C8=",

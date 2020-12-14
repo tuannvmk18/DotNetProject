@@ -19,6 +19,7 @@ namespace helloworld
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
+            //Add httpClient
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:5001/") });
 
             //Add LocalStorage
@@ -30,7 +31,13 @@ namespace helloworld
             //Add Service
             builder.Services.AddScoped<AuthService>();
 
-            await builder.Build().RunAsync();
+            var host = builder.Build();
+
+            //Run service when app start
+            var authService = host.Services.GetRequiredService<AuthService>();
+            await authService.Initialize();
+
+            await host.RunAsync();
         }
     }
 }

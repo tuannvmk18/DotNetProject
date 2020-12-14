@@ -8,6 +8,8 @@ using System.Net.Http.Headers;
 using helloworld.Models;
 using System;
 using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Components;
+
 namespace helloworld.Services
 {
 
@@ -15,6 +17,8 @@ namespace helloworld.Services
     {
         Task<User> Login(string Username, string Password);
         Task Logout();
+
+        Task Initialize();
     }
 
     public class AuthService : IAuthenticaon
@@ -22,11 +26,14 @@ namespace helloworld.Services
         private ILocalStorageService localStorage;
         private ILogger<AuthService> logger;
         private HttpClient httpClient;
-        public AuthService(HttpClient _httpClient, ILocalStorageService _localStorage, ILogger<AuthService> _logger)
+        private NavigationManager navigationManager;
+        public AuthService(HttpClient _httpClient, ILocalStorageService _localStorage, ILogger<AuthService> _logger, NavigationManager _navigationManager)
         {
             this.localStorage = _localStorage;
             this.logger = _logger;
             this.httpClient = _httpClient;
+            this.navigationManager = _navigationManager;
+
             this.logger.LogInformation("Initialized AuthService");
         }
 
@@ -36,6 +43,7 @@ namespace helloworld.Services
             var body = new Dictionary<string, string>();
             body.Add("Username", Username);
             body.Add("Password", Password);
+
             var httpcontent = new StringContent(JsonConvert.SerializeObject(body));
 
             //Customize header
@@ -65,6 +73,13 @@ namespace helloworld.Services
         public async Task Logout()
         {
             await this.localStorage.RemoveItemAsync("token");
+        }
+
+        public async Task Initialize() {
+            var token = await this.localStorage.GetItemAsync<string>("token");
+            if(token == null) {
+                this.navigationManager.NavigateTo("login");
+            }
         }
     }
 }

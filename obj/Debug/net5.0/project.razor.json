@@ -41,39 +41,6 @@
         }
       },
       {
-        "HashCode": 1704903344,
-        "Kind": "Components.Component",
-        "Name": "helloworld.Pages.Index",
-        "AssemblyName": "helloworld",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "helloworld.Pages.Index"
-        }
-      },
-      {
-        "HashCode": -855470750,
-        "Kind": "Components.Component",
-        "Name": "helloworld.Pages.Index",
-        "AssemblyName": "helloworld",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "helloworld.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "helloworld.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -131919204,
         "Kind": "Components.Component",
         "Name": "helloworld.Pages.Counter",
@@ -107,6 +74,72 @@
         }
       },
       {
+        "HashCode": 1328877274,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Pages.Login",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Pages.Login"
+        }
+      },
+      {
+        "HashCode": 1377334252,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Pages.Login",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "helloworld.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1704903344,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Pages.Index",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Pages.Index"
+        }
+      },
+      {
+        "HashCode": -855470750,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Pages.Index",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "helloworld.Pages.Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -833561191,
         "Kind": "Components.Component",
         "Name": "helloworld.Shared.NavMenu",
@@ -136,6 +169,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "helloworld.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -876383179,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Shared.SurveyPrompt",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": 463206681,
+        "Kind": "Components.Component",
+        "Name": "helloworld.Shared.SurveyPrompt",
+        "AssemblyName": "helloworld",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "helloworld.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "helloworld.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -236,55 +322,98 @@
         }
       },
       {
-        "HashCode": -876383179,
+        "HashCode": 1657329025,
         "Kind": "Components.Component",
-        "Name": "helloworld.Shared.SurveyPrompt",
+        "Name": "helloworld.Shared.EmptyLayout",
         "AssemblyName": "helloworld",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
+            "TagName": "EmptyLayout"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
             "Metadata": {
-              "Common.PropertyName": "Title"
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "helloworld.Shared.SurveyPrompt"
+          "Common.TypeName": "helloworld.Shared.EmptyLayout"
         }
       },
       {
-        "HashCode": 463206681,
+        "HashCode": 1034873992,
         "Kind": "Components.Component",
-        "Name": "helloworld.Shared.SurveyPrompt",
+        "Name": "helloworld.Shared.EmptyLayout",
         "AssemblyName": "helloworld",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "helloworld.Shared.SurveyPrompt"
+            "TagName": "helloworld.Shared.EmptyLayout"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
             "Metadata": {
-              "Common.PropertyName": "Title"
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "helloworld.Shared.SurveyPrompt",
+          "Common.TypeName": "helloworld.Shared.EmptyLayout",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1874826679,
+        "Kind": "Components.ChildContent",
+        "Name": "helloworld.Shared.EmptyLayout.Body",
+        "AssemblyName": "helloworld",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "EmptyLayout"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "helloworld.Shared.EmptyLayout.Body",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": -2145829154,
+        "Kind": "Components.ChildContent",
+        "Name": "helloworld.Shared.EmptyLayout.Body",
+        "AssemblyName": "helloworld",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "helloworld.Shared.EmptyLayout"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "helloworld.Shared.EmptyLayout.Body",
+          "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -13790,8 +13919,18 @@
       "FileKind": "componentImport"
     },
     {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Shared\\EmptyLayout.razor",
+      "TargetPath": "Shared\\EmptyLayout.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\MinhTuan\\Desktop\\helloworld\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
       "FileKind": "component"
     },
     {

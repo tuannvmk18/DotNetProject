@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\MinhTuan\Desktop\helloworld\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\MinhTuan\Desktop\helloworld\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\MinhTuan\Desktop\dot\helloworld\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\MinhTuan\Desktop\dot\helloworld\obj\Debug\net5.0\scopedcss\bundle\" />
 </StaticWebAssets>

@@ -1,5 +1,36 @@
 @page "/login"
 @layout EmptyLayout
 @inject AuthService authService
+@inject NavigationManager NavigationManager
+@using System.ComponentModel.DataAnnotations;
 
-<h1>Login page</h1>
+<EditForm Model="@loginmodel" OnValidSubmit="@handleSubmit">
+     <InputText id="username_ipt" @bind-Value="loginmodel.name" />
+     <InputText id="password_ipt" @bind-Value="loginmodel.password" />
+     <button type="submit">Submit</button>
+
+     <DataAnnotationsValidator />
+    <ValidationSummary />
+</EditForm>
+
+@code {
+
+    public class loginModel {
+        [Required]
+        public string name{get; set;}
+        [Required]
+        public string password{get; set;}
+    }
+
+    loginModel loginmodel = new loginModel();
+
+    private async void handleSubmit() {
+        try {
+            await authService.Login(loginmodel.name, loginmodel.password);
+            var a = this.NavigationManager.Uri.ToString();
+            this.NavigationManager.NavigateTo("/");
+        } catch(Exception e) {
+            Console.WriteLine(e.Message);
+        }
+    }
+}

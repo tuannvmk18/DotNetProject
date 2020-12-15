@@ -9,6 +9,7 @@ using helloworld.Models;
 using System;
 using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Components;
+using System.Net;
 
 namespace helloworld.Services
 {
@@ -23,6 +24,7 @@ namespace helloworld.Services
 
     public class AuthService : IAuthenticaon
     {
+        private User user;
         private ILocalStorageService localStorage;
         private ILogger<AuthService> logger;
         private HttpClient httpClient;
@@ -56,11 +58,13 @@ namespace helloworld.Services
                 //Create User Instance
                 var data = await responseMessage.Content.ReadAsStringAsync();
                 var UserObject = JsonConvert.DeserializeObject<User>(data);
-
+                this.user = UserObject;
                 //Set token in localStorage
                 await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
 
                 return await Task.FromResult<User>(UserObject);
+            } else if(responseMessage.StatusCode == HttpStatusCode.NotFound) {
+                throw new Exception("404 Not Found");
             }
             else
             {
@@ -73,6 +77,7 @@ namespace helloworld.Services
         public async Task Logout()
         {
             await this.localStorage.RemoveItemAsync("token");
+            this.user = null;
             this.navigationManager.NavigateTo("login");
         }
 
@@ -81,6 +86,10 @@ namespace helloworld.Services
             if(token == null) {
                 this.navigationManager.NavigateTo("login");
             }
+        }
+
+        public User GetUser() {
+            return this.user;
         }
     }
 }

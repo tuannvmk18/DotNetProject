@@ -26,16 +26,17 @@
 
       <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
          <div class="auth flex items-center w-full md:w-full">
-            <button
-               class="bg-transparent text-gray-800  p-2 rounded border border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700" @onclick="logout">Log
-               out</button>
+            @* <button class="text-gray-700 p-2 rounded border border-gray-300 mr-4 hover:bg-red-400 capitalize"
+               @onclick="logout">Logout</button> *@
+               <a class="no-underline text-grey-400 cursor-pointer" @onclick="logout">Logout</a>
          </div>
       </div>
    </div>
 </nav>
 
 @code {
-   public async void logout() {
+   public async void logout()
+   {
       await authService.Logout();
    }
 }

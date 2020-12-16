@@ -70,7 +70,7 @@ namespace helloworld.Services
             {
                 //Throw exception if error
                 var message = await responseMessage.Content.ReadAsStringAsync();
-                throw new Exception(message);
+                throw new Exception(JObject.Parse(message).GetValue("message").ToString());
             }
         }
 

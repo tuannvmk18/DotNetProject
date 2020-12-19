@@ -1,0 +1,26 @@
+@page "/challenge/{id}"
+
+<style>
+    .code-editor {
+        height: calc(100vh - 125px);
+        width: 500px;
+        float: right;
+    }
+</style>
+
+<div class="panel">
+    Day la phan giai thich cau hoi
+</div>
+
+<button @onclick="@changeTheme">An vao day di</button>
+
+<MonacoEditor @ref="_editor" Id="any-id-string" CssClass="code-editor"/>
+
+@code {
+    [Parameter]
+    public string id {get; set;}
+     private MonacoEditor _editor { get; set; }
+    protected async Task changeTheme() {
+        await MonacoEditor.SetTheme("vs-dark");
+    }
+}

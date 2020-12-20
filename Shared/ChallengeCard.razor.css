@@ -1,14 +1,15 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  margin-top: 15px;
-  min-height: 250px;
+  width: 800px;
+  padding: 30px;
+  height: 120px;
 }
 
-.btn_p {
-  position: absolute;
-  width: 100px;
-  right: 10px;
-  bottom: 10px;
+.card-title {
+  line-height: 1.4;
+}
+
+.card-content {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
 }

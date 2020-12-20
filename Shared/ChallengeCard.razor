@@ -1,18 +1,31 @@
-<div class="card col-md-3">
-    <div class="card-title text-center">
+@inject NavigationManager navigationManager
+
+<div class="card shadow">
+    <div class="card-title font-semibold">
         @title
     </div>
 
     <div class="card-content">
-        @content
-    </div>
-    <button class="btn_p inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">Play</button>
-</div>
+        <div class="card-content-text">
+            @content
+        </div>
 
+        <div class="card-content-btn">
+            <button class="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded outline-none" @onclick="navigateToChallenge">Solve Challenge</button>
+        </div>
+    </div>
+</div>
 
 @code {
     [Parameter]
     public string title { get; set; }
     [Parameter]
     public string content { get; set; }
+
+    [Parameter]
+    public string id{get; set;}
+
+    public void navigateToChallenge() {
+        this.navigationManager.NavigateTo("/challenge/" + id, false);
+    }
 }

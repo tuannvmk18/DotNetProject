@@ -12,7 +12,6 @@
     Day la phan giai thich cau hoi
 </div>
 
-<button @onclick="@changeTheme">An vao day di</button>
 
 <MonacoEditor @ref="_editor" Id="any-id-string" CssClass="code-editor"/>
 
@@ -22,5 +21,13 @@
      private MonacoEditor _editor { get; set; }
     protected async Task changeTheme() {
         await MonacoEditor.SetTheme("vs-dark");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await changeTheme();
+        }
     }
 }

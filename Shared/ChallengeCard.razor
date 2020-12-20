@@ -1,0 +1,18 @@
+<div class="card col-md-3">
+    <div class="card-title text-center">
+        @title
+    </div>
+
+    <div class="card-content">
+        @content
+    </div>
+    <button class="btn_p inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-700 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">Play</button>
+</div>
+
+
+@code {
+    [Parameter]
+    public string title { get; set; }
+    [Parameter]
+    public string content { get; set; }
+}

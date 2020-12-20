@@ -1,5 +1,10 @@
 @page "/challenge"
 
-<div>
-    Hello World
+<div class="container">
+    <div class="row">
+        @for (int i = 0; i < 10; i++)
+        {
+            <ChallengeCard title="Hello World" content="Day la mot thu thach ma ai cung co the vuot qua" />
+        }
+    </div>
 </div>

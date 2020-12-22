@@ -8,15 +8,15 @@
 
 <div class="min-h-screen flex flex-col items-center justify-center bg-gray-300">
     <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
-        <div class="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">Login To Your Account</div>
-        <div class="mt-10">
+        <div class="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">Sign Up To Your Account</div>
+        <div class="mt-5">
             <EditForm Model="@model" OnValidSubmit="@handleSubmit">
                 <div class="flex items-center justify-between mt-4">
                     <div class="w-full md:w-1/2 px-1 mb-6">
                         <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
                             First Name:</label>
                         <div class="relative">
-                            <InputText @bind-Value="model.firstname" id="first-name" type="text" name="email"
+                            <InputText @bind-Value="model.firstname" id="first-name" type="text" name="firstname"
                                 class="text-sm sm:text-base placeholder-gray-500 p-3 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                                 placeholder="first name" />
                         </div>
@@ -27,7 +27,7 @@
                             Last Name:</label>
                         <div class="relative">
                             
-                            <InputText @bind-Value="model.lastname" id="last-name" type="text" name="email"
+                            <InputText @bind-Value="model.lastname" id="last-name" type="text" name="lastname"
                                 class="text-sm sm:text-base placeholder-gray-500 p-3 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                                 placeholder="last name" />
                         </div>
@@ -55,12 +55,12 @@
                     </svg>
                         </div>
 
-                        <InputText @bind-Value="model.username" id="email" type="text" name="email"
+                        <InputText @bind-Value="model.username" id="user-name" type="text" name="username"
                             class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                             placeholder="Username" />
                     </div>
                 </div>
-                
+
                  <div class="flex flex-col mb-6">
                     <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
                         Email:</label>
@@ -153,7 +153,9 @@
 
 @code {
     public class signupModel
-    {   public string firstname { get; set; }
+    {   
+        [Required]
+        public string firstname { get; set; }
         [Required]
          public string lastname { get; set; }
         [Required]

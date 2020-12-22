@@ -101,6 +101,7 @@ namespace helloworld.Services
                 }
                 catch (Exception e)
                 {
+                    await this.localStorage.RemoveItemAsync("token");
                     this.navigationManager.NavigateTo("login");
                     this.logger.LogInformation(e.Message);
                 }

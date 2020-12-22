@@ -142,13 +142,15 @@ namespace helloworld.Services
             }
         }
 
-        public async Task<User> signUp(string Username, string Password)
+        public async Task<User> signUp(string Username, string Password, string Firstname, string Lastname, string Email)
         {
             //Create body http request
             var body = new Dictionary<string, string>();
             body.Add("Username", Username);
             body.Add("Password", Password);
-
+            body.Add("Firstname", Firstname);
+            body.Add("Lastname", Lastname);
+            body.Add("Email", Email);
             var httpcontent = new StringContent(JsonConvert.SerializeObject(body));
 
             //Customize header

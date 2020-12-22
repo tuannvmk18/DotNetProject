@@ -11,24 +11,85 @@
         <div class="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">Login To Your Account</div>
         <div class="mt-10">
             <EditForm Model="@model" OnValidSubmit="@handleSubmit">
+                <div class="flex items-center justify-between mt-4">
+
+                <div class="w-full md:w-1/2 px-1 mb-6">
+                    <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+                        First Name:</label>
+                    <div class="relative">
+                        <InputText @bind-Value="model.username" id="email" type="text" name="email"
+                            class="text-sm sm:text-base placeholder-gray-500 p-3 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
+                            placeholder="first name" />
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 px-1 mb-6">
+                    <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+                        Last Name:</label>
+                    <div class="relative">
+                        
+                        <InputText @bind-Value="model.username" id="email" type="text" name="email"
+                            class="text-sm sm:text-base placeholder-gray-500 p-3 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
+                            placeholder="last name" />
+                    </div>
+                </div>
+                </div>
+
                 <div class="flex flex-col mb-6">
-                    <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">E-Mail Address or
+                    <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
                         Username:</label>
                     <div class="relative">
                         <div
                             class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
-                            <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                            </svg>
+                            <svg
+                      fill="none"
+                      class="w-6 text-gray-400 mx-auto"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
                         </div>
 
                         <InputText @bind-Value="model.username" id="email" type="text" name="email"
                             class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
-                            placeholder="E-Mail Address or Username" />
+                            placeholder="Username" />
                     </div>
                 </div>
+                 <div class="flex flex-col mb-6">
+                    <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
+                        Email:</label>
+                    <div class="relative">
+                        <div
+                            class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+                            <svg
+                    fill="none"
+                    class="w-6 text-gray-400 mx-auto"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                        </div>
+                        <InputText @bind-Value="model.username" id="email" type="text" name="email"
+                            class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
+                            placeholder="Email" />
+                    </div>
+                </div>
+                
+                
+              
+
                 <div class="flex flex-col mb-6">
                     <label for="password" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Password:</label>
                     <div class="relative">
@@ -95,9 +156,13 @@
 
 @code {
     public class signupModel
-    {
+    {   public string firstname { get; set; }
+        [Required]
+         public string lastname { get; set; }
         [Required]
         public string username { get; set; }
+        [Required]
+         public string email { get; set; }
         [Required]
         public string password { get; set; }
         [Required]
@@ -111,7 +176,7 @@
     {
         try
         {
-            await authService.signUp(model.username, model.password);
+            await authService.signUp(model.username, model.password, model.firstname, model.lastname, model.email);
             this.NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

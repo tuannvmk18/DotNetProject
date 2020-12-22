@@ -78,16 +78,21 @@ namespace helloworld.Services {
             var content = await responseMessage.Content.ReadAsStringAsync();
             content = content.Replace("result", "challengelist");
             var list = JsonConvert.DeserializeObject<ChallengeCollection>(content);
+            Console.WriteLine(JsonConvert.SerializeObject(list));
             return await Task.FromResult<ChallengeCollection>(list);
         }
 
         public async Task<Challenge> getChallengeByID(string id) {
             var responseMessage = await this._httpClient.GetAsync("challenge/" + id);
             var content = await responseMessage.Content.ReadAsStringAsync();
-            var challengeId = JObject.Parse(content).GetValue("challengeId").ToString();
-            var title = JObject.Parse(content).GetValue("title").ToString();
-            var description = JObject.Parse(content).GetValue("description").ToString();
-            var challenge = new Challenge(challengeId, title, description);
+            // var challengeId = JObject.Parse(content).GetValue("challengeId").ToString();
+            // var title = JObject.Parse(content).GetValue("title").ToString();
+            // var description = JObject.Parse(content).GetValue("description").ToString();
+
+            // var challenge = new Challenge(challengeId, title, description);
+
+            var challenge = JsonConvert.DeserializeObject<Challenge>(content);
+            Console.WriteLine(JsonConvert.SerializeObject(challenge));
             return await Task.FromResult<Challenge>(challenge);
         }
     }

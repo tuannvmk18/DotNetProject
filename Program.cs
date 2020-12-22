@@ -30,6 +30,7 @@ namespace helloworld
 
             //Add Service
             builder.Services.AddScoped<AuthService>();
+            builder.Services.AddScoped<ChallengeService>();
 
             var host = builder.Build();
             

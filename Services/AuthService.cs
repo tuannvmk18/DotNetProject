@@ -97,7 +97,9 @@ namespace helloworld.Services
                 try
                 {
                     await this.getUserByToken(token);
-                    this.navigationManager.NavigateTo("/", false);
+                    if(this.navigationManager.Uri.CompareTo("http://localhost:4000/login") == 0) {
+                        this.navigationManager.NavigateTo("/", false);
+                    }
                 }
                 catch (Exception e)
                 {

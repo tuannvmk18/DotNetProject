@@ -97,9 +97,11 @@ namespace helloworld.Services
                 try
                 {
                     await this.getUserByToken(token);
+                    this.navigationManager.NavigateTo("/", false);
                 }
                 catch (Exception e)
                 {
+                    await this.localStorage.RemoveItemAsync("token");
                     this.navigationManager.NavigateTo("login");
                     this.logger.LogInformation(e.Message);
                 }
@@ -116,17 +118,17 @@ namespace helloworld.Services
 
             //Customize header
             httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
             //Send request
             var responseMessage = await this.httpClient.PostAsync("user/getbytoken", httpcontent);
 
+            this.httpClient.DefaultRequestHeaders.Authorization = null;
             if (responseMessage.IsSuccessStatusCode)
             {
                 //Create User Instance
                 var data = await responseMessage.Content.ReadAsStringAsync();
                 var UserObject = JsonConvert.DeserializeObject<User>(data);
                 this.user = UserObject;
-                //Set token in localStorage
-                await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
 
                 return await Task.FromResult<User>(UserObject);
             }
@@ -163,7 +165,7 @@ namespace helloworld.Services
                 //Create User Instance
                 var data = await responseMessage.Content.ReadAsStringAsync();
                 var UserObject = JsonConvert.DeserializeObject<User>(data);
-                
+
                 this.logger.LogInformation(data);
                 this.user = UserObject;
                 //Set token in localStorage

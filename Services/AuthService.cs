@@ -21,7 +21,7 @@ namespace helloworld.Services
 
         Task Initialize();
         Task<User> getUserByToken(string token);
-        Task<User> signUp(string username, string password,string FirstName, string Lastname, string Email);
+        Task signUp(string username, string password,string FirstName, string Lastname, string Email);
     }
 
     public class AuthService : IAuthenticaon
@@ -146,7 +146,7 @@ namespace helloworld.Services
             }
         }
 
-        public async Task<User> signUp(string Username, string Password, string Firstname, string Lastname, string Email)
+        public async Task signUp(string Username, string Password, string Firstname, string Lastname, string Email)
         {
             //Create body http request
             var body = new Dictionary<string, string>();
@@ -162,28 +162,9 @@ namespace helloworld.Services
             //Send request
             var responseMessage = await this.httpClient.PostAsync("user/signup", httpcontent);
 
-            if (responseMessage.IsSuccessStatusCode)
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                //Create User Instance
-                var data = await responseMessage.Content.ReadAsStringAsync();
-                var UserObject = JsonConvert.DeserializeObject<User>(data);
-
-                this.logger.LogInformation(data);
-                this.user = UserObject;
-                //Set token in localStorage
-                await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
-
-                return await Task.FromResult<User>(UserObject);
-            }
-            else if (responseMessage.StatusCode == HttpStatusCode.NotFound)
-            {
-                throw new Exception("404 Not Found");
-            }
-            else
-            {
-                //Throw exception if error
-                var message = await responseMessage.Content.ReadAsStringAsync();
-                throw new Exception(JObject.Parse(message).GetValue("message").ToString());
+                throw new Exception(await responseMessage.Content.ReadAsStringAsync());
             }
         }
 

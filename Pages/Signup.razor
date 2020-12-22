@@ -176,7 +176,7 @@
         try
         {
             await authService.signUp(model.username, model.password, model.firstname, model.lastname, model.email);
-            this.NavigationManager.NavigateTo("/");
+            this.NavigationManager.NavigateTo("/login");
         }
         catch (Exception e)
         {

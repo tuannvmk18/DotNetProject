@@ -1,8 +1,8 @@
 namespace helloworld.Models {
     public class Challenge {
-        public string challengeId;
-        public string description;
-        public string title;
+        public string challengeId{get; set;}
+        public string description{get; set;}
+        public string title{get; set;}
 
         public Challenge(string challengeId, string title, string description) {
             this.challengeId = challengeId;

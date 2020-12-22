@@ -1,17 +1,23 @@
 @page "/challenge"
 @inject ChallengeService challengeService
-<div class="container">
-    <div class="row">
-        @for (int i = 0; i < 10; i++)
-        {
-            <ChallengeCard id="123" title="Hello World" content="Day la mot thu thach ma ai cung co the vuot qua" />
-        }
+
+@if (list != null)
+{
+    <div class="container">
+        <div class="row">
+            @for (int i = 0; i < list.challengelist.Length; i++)
+            {
+                <ChallengeCard id="@list.challengelist[i].challengeId" title="@list.challengelist[i].title" content="@list.challengelist[i].description" />
+            }
+        </div>
     </div>
-</div>
+}
 
 
 @code {
-    protected override async Task OnInitializedAsync() {
-        await challengeService.getAllChallenge();
+    private ChallengeCollection list;
+    protected override async Task OnInitializedAsync()
+    {
+        this.list = await challengeService.getAllChallenge();
     }
 }

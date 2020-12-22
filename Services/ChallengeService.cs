@@ -8,7 +8,6 @@ using Newtonsoft.Json.Linq;
 using helloworld.Models;
 using System;  
 using System.Text.RegularExpressions;  
-using System.Collections.Generic;
 namespace helloworld.Services {
 
     public class Output {
@@ -74,10 +73,12 @@ namespace helloworld.Services {
 
         }
 
-        public async Task getAllChallenge() {
+        public async Task<ChallengeCollection> getAllChallenge() {
             var responseMessage = await this._httpClient.GetAsync("challenge");
             var content = await responseMessage.Content.ReadAsStringAsync();
-            
+            content = content.Replace("result", "challengelist");
+            var list = JsonConvert.DeserializeObject<ChallengeCollection>(content);
+            return await Task.FromResult<ChallengeCollection>(list);
         }
 
         public async Task<Challenge> getChallengeByID(string id) {

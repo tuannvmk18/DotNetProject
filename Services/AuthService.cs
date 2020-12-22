@@ -21,7 +21,7 @@ namespace helloworld.Services
 
         Task Initialize();
         Task<User> getUserByToken(string token);
-        Task<User> signUp(string username, string password);
+        Task<User> signUp(string username, string password,string FirstName, string Lastname, string Email);
     }
 
     public class AuthService : IAuthenticaon

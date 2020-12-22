@@ -26,7 +26,7 @@
                         <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">
                             Last Name:</label>
                         <div class="relative">
-                            
+
                             <InputText @bind-Value="model.lastname" id="last-name" type="text" name="lastname"
                                 class="text-sm sm:text-base placeholder-gray-500 p-3 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                                 placeholder="last name" />
@@ -40,19 +40,11 @@
                     <div class="relative">
                         <div
                             class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
-                            <svg
-                      fill="none"
-                      class="w-6 text-gray-400 mx-auto"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
+                            <svg fill="none" class="w-6 text-gray-400 mx-auto" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
                         </div>
 
                         <InputText @bind-Value="model.username" id="user-name" type="text" name="username"
@@ -61,32 +53,24 @@
                     </div>
                 </div>
 
-                 <div class="flex flex-col mb-6">
+                <div class="flex flex-col mb-6">
                     <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-500">
                         Email:</label>
                     <div class="relative">
                         <div
                             class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
-                            <svg
-                    fill="none"
-                    class="w-6 text-gray-400 mx-auto"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+                            <svg fill="none" class="w-6 text-gray-400 mx-auto" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                         </div>
                         <InputText @bind-Value="model.email" id="email" type="email" name="email"
                             class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400"
                             placeholder="Email" />
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col mb-6">
                     <label for="password" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Password:</label>
                     <div class="relative">
@@ -153,20 +137,20 @@
 
 @code {
     public class signupModel
-    {   
+    {
         [Required]
         public string firstname { get; set; }
         [Required]
-         public string lastname { get; set; }
+        public string lastname { get; set; }
         [Required]
         public string username { get; set; }
         [Required]
-         public string email { get; set; }
+        public string email { get; set; }
         [Required]
         public string password { get; set; }
         [Required]
-        [Compare(nameof(password), ErrorMessage="Passwords don't match.")]
-        public string comfirm_password {get; set;}
+        [Compare(nameof(password), ErrorMessage = "Passwords don't match.")]
+        public string comfirm_password { get; set; }
     }
 
     private signupModel model = new signupModel();
@@ -184,4 +168,3 @@
         }
     }
 }
-

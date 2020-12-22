@@ -9,8 +9,12 @@
     }
 </style>
 
+<h3>
+    @title
+</h3>
+
 <div class="panel">
-    Day la phan giai thich cau hoi
+    @description
 </div>
 
 
@@ -31,7 +35,9 @@
 @code {
     [Parameter]
     public string id { get; set; }
-
+    public string description{get; set;}
+    
+    public string title{get; set;}
     public string output;
     private MonacoEditor _editor { get; set; }
     protected async Task changeTheme()
@@ -39,6 +45,12 @@
         await MonacoEditor.SetTheme("vs-dark");
     }
 
+    protected override async Task OnInitializedAsync() {
+        var c = await challengeService.getChallengeByID(id);
+        this.description = c.description;
+        this.title = c.title;
+    }
+    
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)

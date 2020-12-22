@@ -5,6 +5,10 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
+using helloworld.Models;
+using System;  
+using System.Text.RegularExpressions;  
+using System.Collections.Generic;
 namespace helloworld.Services {
 
     public class Output {
@@ -68,6 +72,22 @@ namespace helloworld.Services {
             }
             return await Task.FromResult<Program>(null);
 
+        }
+
+        public async Task getAllChallenge() {
+            var responseMessage = await this._httpClient.GetAsync("challenge");
+            var content = await responseMessage.Content.ReadAsStringAsync();
+            
+        }
+
+        public async Task<Challenge> getChallengeByID(string id) {
+            var responseMessage = await this._httpClient.GetAsync("challenge/" + id);
+            var content = await responseMessage.Content.ReadAsStringAsync();
+            var challengeId = JObject.Parse(content).GetValue("challengeId").ToString();
+            var title = JObject.Parse(content).GetValue("title").ToString();
+            var description = JObject.Parse(content).GetValue("description").ToString();
+            var challenge = new Challenge(challengeId, title, description);
+            return await Task.FromResult<Challenge>(challenge);
         }
     }
 }

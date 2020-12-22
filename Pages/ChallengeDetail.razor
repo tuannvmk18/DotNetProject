@@ -15,6 +15,10 @@
 
 <MonacoEditor @ref="_editor" Id="any-id-string" CssClass="code-editor"/>
 
+<button @onclick="@runCode">
+    Run
+</button>
+
 @code {
     [Parameter]
     public string id {get; set;}
@@ -29,5 +33,10 @@
         {
             await changeTheme();
         }
+    }
+
+    private async void runCode() {
+        var value = await this._editor.GetValue();
+        Console.WriteLine(value);
     }
 }

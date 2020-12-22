@@ -20,6 +20,8 @@ namespace helloworld.Services
         Task Logout();
 
         Task Initialize();
+        Task<User> getUserByToken(string token);
+        Task<User> signUp(string username, string password);
     }
 
     public class AuthService : IAuthenticaon
@@ -63,7 +65,9 @@ namespace helloworld.Services
                 await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
 
                 return await Task.FromResult<User>(UserObject);
-            } else if(responseMessage.StatusCode == HttpStatusCode.NotFound) {
+            }
+            else if (responseMessage.StatusCode == HttpStatusCode.NotFound)
+            {
                 throw new Exception("404 Not Found");
             }
             else
@@ -81,14 +85,104 @@ namespace helloworld.Services
             this.navigationManager.NavigateTo("login");
         }
 
-        public async Task Initialize() {
+        public async Task Initialize()
+        {
             var token = await this.localStorage.GetItemAsync<string>("token");
-            if(token == null) {
+            if (token == null)
+            {
                 this.navigationManager.NavigateTo("login");
+            }
+            else
+            {
+                try
+                {
+                    await this.getUserByToken(token);
+                }
+                catch (Exception e)
+                {
+                    this.navigationManager.NavigateTo("login");
+                    this.logger.LogInformation(e.Message);
+                }
             }
         }
 
-        public User GetUser() {
+        public async Task<User> getUserByToken(string token)
+        {
+            //Create body http request
+            var body = new Dictionary<string, string>();
+            body.Add("token", token);
+
+            var httpcontent = new StringContent(JsonConvert.SerializeObject(body));
+
+            //Customize header
+            httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //Send request
+            var responseMessage = await this.httpClient.PostAsync("user/getbytoken", httpcontent);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                //Create User Instance
+                var data = await responseMessage.Content.ReadAsStringAsync();
+                var UserObject = JsonConvert.DeserializeObject<User>(data);
+                this.user = UserObject;
+                //Set token in localStorage
+                await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
+
+                return await Task.FromResult<User>(UserObject);
+            }
+            else if (responseMessage.StatusCode == HttpStatusCode.NotFound)
+            {
+                throw new Exception("404 Not Found");
+            }
+            else
+            {
+                //Throw exception if error
+                var message = await responseMessage.Content.ReadAsStringAsync();
+                throw new Exception(JObject.Parse(message).GetValue("message").ToString());
+            }
+        }
+
+        public async Task<User> signUp(string Username, string Password)
+        {
+            //Create body http request
+            var body = new Dictionary<string, string>();
+            body.Add("Username", Username);
+            body.Add("Password", Password);
+
+            var httpcontent = new StringContent(JsonConvert.SerializeObject(body));
+
+            //Customize header
+            httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //Send request
+            var responseMessage = await this.httpClient.PostAsync("user/signup", httpcontent);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                //Create User Instance
+                var data = await responseMessage.Content.ReadAsStringAsync();
+                var UserObject = JsonConvert.DeserializeObject<User>(data);
+                
+                this.logger.LogInformation(data);
+                this.user = UserObject;
+                //Set token in localStorage
+                await this.localStorage.SetItemAsync("token", JObject.Parse(data).GetValue("token").ToString());
+
+                return await Task.FromResult<User>(UserObject);
+            }
+            else if (responseMessage.StatusCode == HttpStatusCode.NotFound)
+            {
+                throw new Exception("404 Not Found");
+            }
+            else
+            {
+                //Throw exception if error
+                var message = await responseMessage.Content.ReadAsStringAsync();
+                throw new Exception(JObject.Parse(message).GetValue("message").ToString());
+            }
+        }
+
+        public User GetUser()
+        {
             return this.user;
         }
     }

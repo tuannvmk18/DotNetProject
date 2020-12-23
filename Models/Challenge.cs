@@ -1,14 +1,21 @@
+
+using Newtonsoft.Json;
 namespace helloworld.Models {
     public class TestCase {
-        string input{get; set;}
-        string output{get; set;}
+        [JsonProperty("input")]
+        public string input{get; set;}
+        [JsonProperty("output")]
+        public string output{get; set;}
     }
 
     public class Challenge {
+        [JsonProperty("challengeId")]
         public string challengeId{get; set;}
+        [JsonProperty("description")]
         public string description{get; set;}
+        [JsonProperty("title")]
         public string title{get; set;}
-
+        [JsonProperty("testCases")]
         public TestCase[] testCases{get; set;}
 
         public Challenge(string challengeId, string title, string description) {

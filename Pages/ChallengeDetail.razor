@@ -22,14 +22,21 @@
 
 <MonacoEditor @ref="_editor" Id="any-id-string" CssClass="code-editor" />
 
-<button class="bg-blue-600" @onclick="@runCode">
+<button class="bg-blue-600 w-" @onclick="@runCode">
     Run
 </button>
 
-<div>
-    Output:
-    @output
-</div>
+@if(testCase != null) {
+    <p>Test case output: @testCase[0].output</p>
+}
+
+@if (output != null)
+{
+    <p>Output: @output[0].output</p>
+    <p>Cpu time: @output[0].cpuTime</p>
+    <p>Cpu time: @output[0].memory</p>
+}
+
 
 @code {
     [Parameter]
@@ -37,7 +44,8 @@
     public string description { get; set; }
 
     public string title { get; set; }
-    public string output{get; set;}
+    public Output[] output { get; set; }
+    public TestCase[] testCase { get; set; }
     private MonacoEditor _editor { get; set; }
     protected async Task changeTheme()
     {
@@ -49,6 +57,7 @@
         var c = await challengeService.getChallengeByID(id);
         this.description = c.description;
         this.title = c.title;
+        this.testCase = c.testCases;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -63,8 +72,10 @@
     private async void runCode()
     {
         var value = await this._editor.GetValue();
-        helloworld.Services.Program a = await challengeService.runCode(value);
-        this.output = a.data.output;
+        helloworld.Services.Output[] a = await challengeService.runCode(value, testCase);
+        this.output = a;
+        @* Console.WriteLine(testCase[0].output);
+            Console.WriteLine(this.output[0].output); *@
         StateHasChanged();
     }
 }

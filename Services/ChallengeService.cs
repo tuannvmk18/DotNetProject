@@ -7,13 +7,18 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
 using helloworld.Models;
 using System;  
-using System.Text.RegularExpressions;  
+using System.Text.RegularExpressions;
+using System.Net.Http.Formatting;  
 namespace helloworld.Services {
 
     public class Output {
+        [JsonProperty("output")]
         public string output;
+        [JsonProperty("statusCode")]
         public string statusCode;
+        [JsonProperty("memory")]
         public string memory;
+        [JsonProperty("cpuTime")]
         public string cpuTime;
 
         public Output(string output, string statusCode, string memory, string cpuTime) {
@@ -43,33 +48,27 @@ namespace helloworld.Services {
             this._logger = logger;
         }
 
-        public async Task<Program> runCode(string value) {
-            var body = new Dictionary<string, string>();
-            body.Add("Lang", "nodejs");
-            body.Add("Index", "3");
-            body.Add("Program", value);
+        public async Task<Output[]> runCode(string value, TestCase[] testCase) {
+            // var body = new Dictionary<string, string>();
+            // body.Add("Lang", "nodejs");
+            // body.Add("Index", "3");
+            // body.Add("Program", value);
+            // body.Add("TestCase", JsonConvert.SerializeObject(testCase));
+            var body = new {
+                Lang="nodejs",
+                Index= "3",
+                Program= value,
+                TestCase=testCase
+            };
 
-            var httpcontent = new StringContent(JsonConvert.SerializeObject(body));
-
-             //Customize header
-            httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             //Send request
-            var responseMessage = await this._httpClient.PostAsync("compiler", httpcontent);
+            var responseMessage = await this._httpClient.PostAsync("compiler/submit-challenge", body, new JsonMediaTypeFormatter());
             if(responseMessage.IsSuccessStatusCode) {
                 var reponse = await responseMessage.Content.ReadAsStringAsync();
-                var message = JObject.Parse(reponse).GetValue("message").ToString();
-                var error = JObject.Parse(reponse).GetValue("message").ToString();
-
-                var data = JObject.Parse(reponse).GetValue("data");
-                var output = JObject.FromObject(data).GetValue("output").ToString();
-                var statusCode = JObject.FromObject(data).GetValue("statusCode").ToString();
-                var memory = JObject.FromObject(data).GetValue("memory").ToString();
-                var cpuTime = JObject.FromObject(data).GetValue("cpuTime").ToString();
-
-                var program = new Program(message, error, new Output(output, statusCode, memory, cpuTime));
-                return await Task.FromResult<Program>(program);
+                var program = JsonConvert.DeserializeObject<Output[]>(reponse);
+                return await Task.FromResult<Output[]>(program);
             }
-            return await Task.FromResult<Program>(null);
+            return await Task.FromResult<Output[]>(null);
 
         }
 

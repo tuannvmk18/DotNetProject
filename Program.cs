@@ -20,7 +20,7 @@ namespace helloworld
             builder.RootComponents.Add<App>("#app");
 
             //Add httpClient
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:5001/") });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://algorithon-server20210630072255.azurewebsites.net") });
 
             //Add LocalStorage
             builder.Services.AddBlazoredLocalStorage(config => config.JsonSerializerOptions.WriteIndented = true);
